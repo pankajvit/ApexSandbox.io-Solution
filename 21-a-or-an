@@ -1,0 +1,11 @@
+public String aOrAn(String word) {
+    //code here
+    string firstLetter = word.substring(0,1);
+
+    if(firstLetter == 'a' || firstLetter == 'e' || firstLetter == 'i'
+    || firstLetter == 'o' || firstLetter == 'u'){
+        return "an "+word;
+    }else{
+        return "a "+word;
+    }
+}

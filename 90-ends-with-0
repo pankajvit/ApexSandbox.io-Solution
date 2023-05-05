@@ -1,0 +1,9 @@
+public Boolean isEndWithZero(Integer num){
+    //code here
+    Integer lastDigit = num % 10;
+    if(lastDigit == 0){
+        return true;
+    }else{
+        return false;
+    }
+}

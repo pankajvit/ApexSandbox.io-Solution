@@ -1,0 +1,8 @@
+public String evenOrOdd(Integer num) {
+    //code here
+    if(num % 2){
+        return 'odd';
+    }else if(num % 2 == 0){
+        return 'even';
+    }
+}

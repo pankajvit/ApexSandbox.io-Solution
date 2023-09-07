@@ -1,6 +1,6 @@
 public Boolean isPrime(Integer num) {
     //code here
-    Boolean result = false;
+    Boolean result;
     if(num > 1){
         Integer i;
         for(i=2;i<num;i++){
@@ -10,8 +10,9 @@ public Boolean isPrime(Integer num) {
         }
         if(i==num-1){
             result = true;
-        }
-        result = false;
+        }else{
+            result = false;
+        } 
     }
     return result;
 }

@@ -1,0 +1,15 @@
+public Boolean isPrime(Integer num) {
+    //code here
+    if(num > 1){
+        Integer i;
+        for(i=2;i<num;i++){
+            if(Math.Mod(num,i)==0){
+                break;
+            }
+        }
+        if(i==num-1){
+            return true;
+        }
+        return false;
+    }
+}

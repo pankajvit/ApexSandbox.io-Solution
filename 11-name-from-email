@@ -2,7 +2,7 @@ public String nameFromEmail(String email) {
     //code here
     //email.indexOf('.');
     //email.indexOf('@');
-    string firstName = email.substring(1,email.indexOf('.'));
+    string firstName = (email.substring(1,email.indexOf('.'));
     string lastName = email.substring(email.indexOf('.'),email.indexOf('@')+1);
-    return firstName.capitalize(firstName) + ' '+lastName.capitalize(lastName);
+    return firstName.capitalize() + ' '+lastName.capitalize();
 }

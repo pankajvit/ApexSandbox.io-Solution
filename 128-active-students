@@ -3,4 +3,5 @@ public List<apxio__Student__c> selectActiveStudents() {
     List<apxio__Student__c> studentList = [Select Name,apxio__Active__c 
     from apxio__Student__c
     Where apxio__Active__c = true];
+    return studentList;
 }

@@ -1,0 +1,16 @@
+public Integer fibonacci(Integer n) {
+    //code here
+    if(n > 0){
+        Integer firstNumber = 1;
+        Integer secondNumber = 1;
+        Integer thirdNumber;
+        Integer startNumber = 1;
+        while(startNumber <= n){
+            thirdNumber = firstNumber + secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = thirdNumber;
+            startNumber++;
+        }
+    }
+    return thirdNumber;
+}

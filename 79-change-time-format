@@ -1,21 +1,28 @@
 public String changeTimeFormat(String strTime) {
     Integer hourTime = Integer.valueOf(strTime.substring(0,strTime.indexOf(':')));
-    String minuteTime = strTime.substring(strTime.indexOf(':')+1);
-    String finalOutput;
-    if(hourTime < 12){
-        finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
-    }else{
-        Integer hourTimeIn24Format;
-        if(hourTime > 12){
+		String minuteTime = strTime.substring(strTime.indexOf(':')+1);
+		String finalOutput;
+		
+        if(hourTime >=0 && hourTime < 12){
+            system.debug('Inside if condition');
+            if(hourTime>=1 && hourTime<=9){
+            	finalOutput = '0'+String.Valueof(hourTime) + ':'+minuteTime + ' AM';   
+            }else if(hourTime < 1){
+                finalOutput = '12' + ':'+minuteTime + ' AM';
+            }else if(hourTime > 9 && hourTime < 12){
+            	finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';   
+            }
+        }else if(hourTime >= 12 && hourTime <=23){
+            system.debug('Inside if else condition');
+            Integer hourTimeIn24Format;
             hourTimeIn24Format = hourTime - 12;
-            if(hourTimeIn24Format == 12){
-               	finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' AM';
-            }else{
+            if(hourTimeIn24Format < 1){
+            	finalOutput = '12' + ':'+minuteTime + ' PM';
+            }else if(hourTimeIn24Format >= 1 && hourTimeIn24Format <= 9){
+               	finalOutput = '0'+String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' PM';
+            }else if(hourTimeIn24Format > 9 && hourTimeIn24Format <= 11){
                 finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' PM';
             }
-        }else{
-            finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
-        }
-    }
-    return finalOutput;
+       }
+       return finalOutput;
 }

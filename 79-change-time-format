@@ -1,14 +1,21 @@
 public String changeTimeFormat(String strTime) {
-    //code here
     Integer hourTime = Integer.valueOf(strTime.substring(0,strTime.indexOf(':')));
     String minuteTime = strTime.substring(strTime.indexOf(':')+1);
     String finalOutput;
-    if(hourTime <= 12){
-        	finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
+    if(hourTime < 12){
+        finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
     }else{
-            Integer hourTimeIn24Format;
+        Integer hourTimeIn24Format;
+        if(hourTime > 12){
             hourTimeIn24Format = hourTime - 12;
-            finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' PM';
+            if(hourTimeIn24Format == 12){
+               	finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' AM';
+            }else{
+                finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' PM';
+            }
+        }else{
+            finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
+        }
     }
     return finalOutput;
 }

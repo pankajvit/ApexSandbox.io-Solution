@@ -1,0 +1,14 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+    Integer hourTime = Integer.valueOf(strTime.substring(0,strTime.indexOf(':')));
+    String minuteTime = strTime.substring(strTime.indexOf(':')+1);
+    String finalOutput;
+    if(hourTime <= 12){
+        	finalOutput = String.Valueof(hourTime) + ':'+minuteTime + ' AM';
+    }else{
+            Integer hourTimeIn24Format;
+            hourTimeIn24Format = hourTime - 12;
+            finalOutput = String.Valueof(hourTimeIn24Format) + ':'+minuteTime + ' PM';
+    }
+    return finalOutput;
+}

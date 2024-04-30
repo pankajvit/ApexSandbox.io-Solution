@@ -1,6 +1,9 @@
 public String convert15to18DigitId(String fifteenDigit)
 {
     //code here
+    if(String.isBlank(fifteenDigit)){
+        return null;
+    }
     string suffix = '';
        	system.debug(fifteenDigit.length());
         if(fifteenDigit.length() != 15 || fifteenDigit == null){

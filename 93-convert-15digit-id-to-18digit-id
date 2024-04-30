@@ -3,7 +3,7 @@ public String convert15to18DigitId(String fifteenDigit)
     //code here
     string suffix = '';
        	system.debug(fifteenDigit.length());
-        if(fifteenDigit.length() == 15 || fifteenDigit == null){
+        if(fifteenDigit.length() != 15 || fifteenDigit == null){
             return '-1';
         }else{
             //Our 15 Digit Id

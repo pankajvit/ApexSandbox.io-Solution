@@ -1,0 +1,32 @@
+public String convert15to18DigitId(String fifteenDigit)
+{
+    //code here
+    string suffix = '';
+       	system.debug(fifteenDigit.length());
+        if(fifteenDigit.length() != 15){
+            return '-1';
+        }else{
+            //Our 15 Digit Id
+			//String id = '00570000001ZwTi' ;
+			integer flags;
+			for (integer i = 0; i < 3; i++) {
+          		flags = 0;
+          		for (integer j = 0; j < 5; j++) {
+               		string c = fifteenDigit.substring(i * 5 + j,i * 5 + j + 1);
+               		//Only add to flags if c is an uppercase letter:
+               		if (c.toUpperCase().equals(c) && c >= 'A' && c <= 'Z') {
+                    	flags = flags + (1 << j);
+               		}
+          		}
+          		if (flags <= 25) {
+               		suffix = suffix + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.substring(flags,flags+1);
+          		}else{
+               		suffix = suffix + '012345'.substring(flags-25,flags-24);
+          		}
+     		}
+			//18 Digit Id with checksum
+			System.debug(' ::::::: ' + fifteenDigit + suffix) ;
+        }
+        String Digit18Id = fifteenDigit + suffix;
+       	return Digit18Id;
+}

@@ -1,0 +1,9 @@
+public String divide(Integer a, Integer b){
+    //code here
+    try{
+        Integer result = a/b;
+        return String.ValueOf(result);
+    }catch(MathException ex){
+        return ex.getMessage();
+    }
+}

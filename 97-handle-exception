@@ -3,7 +3,7 @@ public String divide(Integer a, Integer b){
     try{
         Integer result = a/b;
         return String.ValueOf(result);
-    }catch(MathException ex){
+    }catch(Exception ex){
         return ex.getMessage();
     }
 }

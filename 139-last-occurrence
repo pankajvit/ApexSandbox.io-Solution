@@ -1,0 +1,16 @@
+public static Integer findLast(List<Integer> nums, Integer target) {
+   // code here
+   Integer index = -1;
+   List<Integer> targetOccurance = new List<Integer>();
+   for(Integer i=0;i<nums.size();i++){
+       if(nums[i]==target){
+            targetOccurance.add(i);
+        }
+   }
+
+   if(targetOccurance.size()>0){
+       return targetOccurance.get(targetOccurance.size()-1);
+   }else{
+       return -1;
+   }
+}

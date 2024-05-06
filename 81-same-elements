@@ -1,0 +1,38 @@
+public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
+    //code here
+    Integer counter = 1;
+    Boolean finalValueforNums1;
+    for(Integer num : nums1){
+        if(nums2.contains(num)){
+            counter++;
+        }else{
+            break;
+        }
+    }
+    if(counter != nums1.size()){
+        finalValueforNums1 = false;
+    }else{
+        finalValueforNums1 = true;
+    }
+
+    counter = 1;
+    Boolean finalValueforNums2;
+    or(Integer num : nums2){
+        if(nums1.contains(num)){
+            counter++;
+        }else{
+            break;
+        }
+    }
+    if(counter != nums2.size()){
+        finalValueforNums2 = false;
+    }else{
+        finalValueforNums2 = true;
+    }
+
+    if(finalValueforNums1 && finalValueforNums2){
+        return true;
+    }else{
+        return false;
+    }
+}

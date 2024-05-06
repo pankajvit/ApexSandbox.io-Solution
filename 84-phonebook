@@ -6,7 +6,7 @@ public Map<String, String> phonebook(List<Contact> contacts) {
         String lastName;
         if(con.Phone != null){
             String fullName = con.firstName +' '+ con.lastName;
-            nameVsContact.put(fullName, con.Phone);
+            nameVsContact.put(con.Name, con.Phone);
         }
     }
     return nameVsContact;

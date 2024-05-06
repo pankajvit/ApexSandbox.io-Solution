@@ -1,0 +1,12 @@
+public Integer findTargetCount(List<Integer> nums, Integer target) {
+    // code here
+    Integer targetOccurance = 0;
+
+    for(Integer num : nums){
+        if(num == target){
+            targetOccurance++;
+        }
+    }
+
+    return targetOccurance;
+}

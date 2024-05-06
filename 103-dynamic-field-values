@@ -1,10 +1,16 @@
 public List<String> getFieldsValue(Account acc, List<String> fields)
 {
-    // code here
     List<String> result = new List<String>();
+    String query = 'Select Id';
     for(String field : fields){
-        if(acc.field != null){
-            result.add(String.ValueOf(acc.field));
+        query += ', '+field;
+    }
+    query += ' from Account Where Id = \'' + acc.Id + '\'';
+    List<sObject> accList = new List<sObject>();
+    accList = Database.query(query);
+    for(String field : fields){
+        if(accList[0].get(field) != null){
+            result.add(String.ValueOf(accList[0].get(field)));
         }else{
             result.add(null);
         }

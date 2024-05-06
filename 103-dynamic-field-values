@@ -1,6 +1,9 @@
 public List<String> getFieldsValue(Account acc, List<String> fields)
 {
-    List<String> result = new List<String>();
+    if(acc != null){
+            insert acc;
+        }
+        List<String> result = new List<String>();
         String query = 'Select Id';
         for(String field : fields){
         	query += ', '+field;
@@ -9,12 +12,12 @@ public List<String> getFieldsValue(Account acc, List<String> fields)
         system.debug('query: '+query);
         List<sObject> accList = new List<sObject>();
         accList = Database.query(query);
-    for(String field : fields){
-        if(accList[0].get(field) != null){
-            result.add(String.ValueOf(accList[0].get(field)));
-        }else{
-            result.add(null);
+        for(String field : fields){
+            if(accList[0].get(field) != null){
+                result.add(String.ValueOf(accList[0].get(field)));
+            }else{
+                result.add(null);
+            }
         }
-    }
-    return result;
+        return result;
 }

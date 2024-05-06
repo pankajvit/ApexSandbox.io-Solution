@@ -8,4 +8,6 @@ public Set<Integer> setUnion(Set<Integer> set1, Set<Integer> set2) {
     for(Integer s : set2){
         unionSet.add(s);
     }
+
+    return unionSet;
 }

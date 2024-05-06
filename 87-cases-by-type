@@ -1,0 +1,15 @@
+public Map<String, List<Case>> casesByType(List<Case> cases) {
+    //code here
+    Map<String, List<Case>> caseTypeVsListOfCase = new Map<String, List<Case>>();
+
+    for(Case c : cases){
+        if(c.Type != null){
+            if(caseTypeVsListOfCase.containsKey(c.Type)){
+                caseTypeVsListOfCase.get(c.Type).add(c);
+            }else{
+                caseTypeVsListOfCase.put(c.Type, c);
+            }
+        }
+    }
+    return caseTypeVsListOfCase;
+}

@@ -1,8 +1,11 @@
 public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
 {
     List<sObject> listOfsObject = new List<sObject>();
-    listOfsObject?.addAll(accounts);
-    listOfsObject?.addAll(contacts);
-
+    if(accounts != null){
+        listOfsObject.addAll(accounts);
+    }
+    if(contacts != null){
+        listOfsObject.addAll(contacts);
+    }
     return listOfsObject;
 }

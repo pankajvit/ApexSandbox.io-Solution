@@ -1,8 +1,10 @@
 public List<Account> getAccountsFromJSONString(String inputJSON){
     List<Account> accounts = new List<Account>();
-        
+    
     try {
-        accounts = (List<Account>) JSON.deserialize(inputJSON, List<Account>.class);
+        if(inputJSON != null){
+             accounts = (List<Account>) JSON.deserialize(inputJSON, List<Account>.class);
+        }
     } catch (Exception e) {
         // Handle exception or log error
         System.debug('Error deserializing JSON: ' + e.getMessage());

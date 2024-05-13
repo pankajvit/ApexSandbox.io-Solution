@@ -1,0 +1,34 @@
+public Boolean isKeyAccount(Account a) {
+    //code here
+    Boolean result;
+    if(a != null){
+        if(a.AnnualRevenue != null && a.Industry != null){
+            if(a.Industry == 'Banking' && a.AnnualRevenue >= 600000){
+                if(a.AnnualRevenue >= 600000){
+                    result = true;
+                }else{
+                    result = false;
+                }
+            }else if(a.Industry == 'Technology'){
+                if(a.AnnualRevenue >= 800000){
+                    result = true;
+                }else{
+                    result = false;
+                }
+            }else if(a.Industry == 'Retail'){
+                if(a.AnnualRevenue >= 2000000){
+                    result = true;
+                }else{
+                    result = false;
+                }
+            }else{
+                if(a.AnnualRevenue >= 500000){
+                    result = true;
+                }else{
+                    result = false;
+                }
+            }
+        }
+    }
+    return result;
+}

@@ -1,0 +1,15 @@
+public Boolean isBirthday(Contact c) {
+    Boolean result;
+    Integer todayDate = Date.today().day();
+    Integer todayMonth = Date.today().month();
+        
+    Integer birthdateDay = c.Birthdate.day();
+    Integer birthdateMonth = c.Birthdate.month();
+    if(todayDate == birthdateDay && todayMonth == birthdateMonth){
+        result = true;
+    }else{
+        result = false;
+    }
+    return result;
+    
+}

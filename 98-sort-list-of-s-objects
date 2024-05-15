@@ -1,14 +1,16 @@
 public List<Account> getAccounts(List<Account> accounts) {
     List<Account> result = new List<Account>();
-    List<AccountSort> accsorts = new List<AccountSort>();
-    for(Account acc : accounts){
-        AccountSort accsort = new AccountSort(acc.Name, acc.AnnualRevenue);
-        accsorts.add(accsort);
-    }
-    accsorts.sort();
-    for(AccountSort accsort : accsorts){
-        Account acc = new Account(Name=accsort.Name,AnnualRevenue=accsort.AnnualRevenue);
-        result.add(acc);
+    if(accounts != null){
+        List<AccountSort> accsorts = new List<AccountSort>();
+        for(Account acc : accounts){
+            AccountSort accsort = new AccountSort(acc.Name, acc.AnnualRevenue);
+            accsorts.add(accsort);
+        }
+        accsorts.sort();
+        for(AccountSort accsort : accsorts){
+            Account acc = new Account(Name=accsort.Name,AnnualRevenue=accsort.AnnualRevenue);
+            result.add(acc);
+        }
     }
     return result;
 }

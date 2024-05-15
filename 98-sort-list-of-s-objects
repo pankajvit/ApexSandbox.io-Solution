@@ -1,0 +1,34 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    List<Account> result = new List<Account>();
+    List<AccountSort> accsorts = new List<AccountSort>();
+    for(Account acc : accounts){
+        AccountSort accsort = new AccountSort(acc.Name, acc.AnnualRevenue);
+        accsorts.add(accsort);
+    }
+    accsorts.sort();
+    for(AccountSort accsort : accsorts){
+        Account acc = new Account(Name=accsort.Name,AnnualRevenue=accsort.AnnualRevenue);
+        result.add(acc);
+    }
+    return result;
+}
+// write extra class here 
+public class AccountSort implements Comparable {
+	public String Name;
+    public Decimal AnnualRevenue;
+    public AccountSort(String name, Decimal AnnualRevenue){
+        this.Name = name;
+        this.AnnualRevenue = AnnualRevenue;
+    }
+
+    public Integer compareTo(Object compareToObject){
+        AccountSort compareToAccountSort = (AccountSort) compareToObject;
+        if(this.AnnualRevenue < compareToAccountSort.AnnualRevenue){
+        	return 1;
+        }
+        if(this.AnnualRevenue > compareToAccountSort.AnnualRevenue){
+        	return -1;
+        }
+        return 0;
+    }
+}

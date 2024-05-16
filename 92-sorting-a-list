@@ -4,6 +4,8 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
     if(accountNames != null){
         accountNames.sort();
         result.addAll(accountNames);
+    }else{
+        result = null;
     }
     return result;
 }

@@ -4,5 +4,5 @@ public Decimal average(List<Decimal> numbers){
         sum += num;
     }
     Decimal average = sum / numbers.size();
-    return Decimal.setScale(average,2);
+    return average.setScale(2);
 }

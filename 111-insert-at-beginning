@@ -1,5 +1,3 @@
 public void insertAtStart(String cityName, List<String> cities) {
-    List<String> newCityName = new List<String>();
-    newCityName.add(cityName);
-    newCityName.addAll(cities);
+   cities.add(0, cityName);
 }
